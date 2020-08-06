@@ -1,0 +1,19 @@
+<table class="table" >
+  <tr ngclass="btn-primary">
+    <th class="tbl2">Blog ID</th>
+    <th class="tbl2">Title</th>
+    <th class="tbl2">Content</th>
+  </tr>
+  <tr *ngFor="let blog of blogList">
+    <td class="tbl2">{{blog.Id}}</td>
+    <td class="tbl2">{{blog.Title}}</td>
+    <td class="tbl2">{{blog.Content}}</td>
+    <td class="tbl2">
+      <button type="button" class="btn btn-info"(click)="loadBlogToEdit(blog.Id)">Edit</button>
+    </td>
+    <td class="tbl2">
+      <button type="button" class="btn btn-danger"(click)="deleteEmployee(blog.Id)">Delete</button>
+    </td>
+  </tr>
+
+</table>

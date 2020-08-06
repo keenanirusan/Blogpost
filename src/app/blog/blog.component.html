@@ -1,0 +1,39 @@
+<div class="container">
+
+  <br><br>
+      <form [formGroup]="blogForm"(ngSubmit)="onFormSubmit()">
+        <table>
+          <tr>
+            <td class="tbl1">
+              <label>
+                 Title:
+                <input type="text" formControlName="Title">
+              </label>
+            </td>
+
+            <td class="tbl1">
+              <label>
+                Content:
+                <input type="text" formControlName="Content">
+              </label>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+              <td  class="content-center">
+                <button type="submit" [disabled]="!blogForm.valid">Submit</button>
+                <button type="reset" (click)="resetForm()">Reset</button>
+              </td>
+
+              <td>
+                <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success">
+                  {{message}}
+                </p>
+              </td>
+            </tr>
+        </table>
+
+  <br><br>
+      </form>
+  </div>
